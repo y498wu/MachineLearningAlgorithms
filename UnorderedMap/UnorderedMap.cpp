@@ -5,6 +5,23 @@
 
 using namespace std;
 
+/* 
+map vs unordered_map 
+
+map: increasing order
+unordered_map: no order
+
+map: self balance BST like red-black tree
+unordered_map: hash table
+
+map: 
+    log(n) -- search
+    log(n) + Rebalance -- insert and delete
+unordered_map:
+    average: O(1)
+    worst: O(n)
+*/
+
 void uniqueNum(vector<int>& lst){
     unordered_map<int, int> lib;
     for(auto num : lst){
