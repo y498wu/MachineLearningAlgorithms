@@ -42,6 +42,6 @@ yy = a * XX - clf.intercept_[0] / w[1]
 plt.plot(XX, yy, 'k-')
 
 # show the plot visually
-plt.scatter(training_X[:, 0], training_X[:, 1], c=training_y)
+plt.scatter(training_X[:, 0], training_X[:, 1], c=training_y, marker='*')
 plt.legend()
 plt.show()
