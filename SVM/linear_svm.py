@@ -32,6 +32,7 @@ w = clf.coef_[0]
 a = -w[0] / w[1]
 
 # make the x-axis space for the data points
+# the default number of points is 50
 XX = np.linspace(0, 13)
 
 # get the y-values to plot the decision boundary
