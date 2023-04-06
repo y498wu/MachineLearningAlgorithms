@@ -26,6 +26,16 @@ def fitting(X, y, C, gamma):
 
     # Fit the model
     # Note, available kernels: {‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’}, default=’rbf’
+
+    # probability: False by default. This must be enabled prior to calling fit
+
+    # C: regularization parameter
+    # A smaller value of C creates a larger margin at the cost of more margin violations, 
+    # while a larger value of C leads to a smaller margin, but fewer margin violations. 
+
+    # gamma: a hyperparameter that determines the shape of the decision boundary.
+    # A high gamma will result in a more complex decision boundary, 
+    # and a low gamma will result in a smoother boundary.
     model = SVC(kernel='rbf', probability=True, C=C, gamma=gamma)
     clf = model.fit(X_train, y_train)
 
@@ -36,9 +46,18 @@ def fitting(X, y, C, gamma):
 
     # Use score method to get accuracy of the model
     print('----- Evaluation on Test Data -----')
+    # score_te: The score is calculated as the ratio of the number of correctly classified samples 
+    # to the total number of samples in the test set.
     score_te = model.score(X_test, y_test)
     print('Accuracy Score: ', score_te)
     # Look at classification report to evaluate the model
+    # Precision – Accuracy of positive predictions.
+    # Precision = TP/(TP + FP)
+    # Recall: Fraction of positives that were correctly identified.
+    # Recall = TP/(TP+FN)
+    # F1 Score = 2*(Recall * Precision) / (Recall + Precision)
+    # The F1 score is a weighted harmonic mean of precision and recall 
+    # such that the best score is 1.0 and the worst is 0.0
     print(classification_report(y_test, pred_labels_te))
     print('--------------------------------------------------------')
 
@@ -48,6 +67,10 @@ def fitting(X, y, C, gamma):
     # Look at classification report to evaluate the model
     print(classification_report(y_train, pred_labels_tr))
     print('--------------------------------------------------------')
+    
+    # Evaluate a ML model on both training and test data separately to check for overfitting
+    # If the model performs well on training data but poorly on test data, it may be overfitting. 
+    # If the model performs poorly on both training and test data, it may be underfitting
     
     # Return relevant data for chart plotting
     return X_train, X_test, y_train, y_test, clf
