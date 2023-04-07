@@ -83,11 +83,15 @@ def Plot_3D(X, X_test, y_test, clf):
     margin = 1
 
     # Create a mesh grid on which we will run our model
+    # Get the minimum and maximum values for the x and y axes of the mesh grid.
+    # The fillna method is used to replace any missing values in the data with the mean of the column.
     x_min, x_max = X.iloc[:, 0].fillna(X.mean()).min() - margin, X.iloc[:, 0].fillna(X.mean()).max() + margin
     y_min, y_max = X.iloc[:, 1].fillna(X.mean()).min() - margin, X.iloc[:, 1].fillna(X.mean()).max() + margin
     xrange = np.arange(x_min, x_max, mesh_size)
     yrange = np.arange(y_min, y_max, mesh_size)
     xx, yy = np.meshgrid(xrange, yrange)
+    print(xx)
+    print(yy)
             
     # Calculate predictions on grid
     Z = clf.predict_proba(np.c_[xx.ravel(), yy.ravel()])[:, 1]
