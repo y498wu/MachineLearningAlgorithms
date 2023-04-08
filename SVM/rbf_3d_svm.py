@@ -83,6 +83,7 @@ def Plot_3D(X, X_test, y_test, clf):
     margin = 1
 
     # Create a mesh grid on which we will run our model
+
     # Get the minimum and maximum values for the x and y axes of the mesh grid.
     # The fillna method is used to replace any missing values in the data with the mean of the column.
     x_min, x_max = X.iloc[:, 0].fillna(X.mean()).min() - margin, X.iloc[:, 0].fillna(X.mean()).max() + margin
@@ -90,11 +91,40 @@ def Plot_3D(X, X_test, y_test, clf):
     xrange = np.arange(x_min, x_max, mesh_size)
     yrange = np.arange(y_min, y_max, mesh_size)
     xx, yy = np.meshgrid(xrange, yrange)
-    print(xx)
-    print(yy)
             
     # Calculate predictions on grid
+
+    # Predict will give either 0 or 1 as output. 
+    # Whereas Predict_proba will give the probability of both 0 and 1.
+
+    # np.c_ : add along second axis
+    # e.g.: np.c_[np.array([[1,2,3]]), 0, 0, np.array([[4,5,6]])]
+    # shapes:
+    # np.array([[1,2,3]]) = 1,3
+    # np.array([[4,5,6]]) = 1,3
+    # we can think of it as [[0]] = 1,1
+    # result 1,3+1+1+3 = 1,8
+    # which is the shape of result : array([[1, 2, 3, 0, 0, 4, 5, 6]])
+
+    # Another e.g.: # both are 2 dimensional array
+    # a = array([[1, 2, 3], [4, 5, 6]])
+    # b = array([[7, 8, 9], [10, 11, 12]])
+    # The new shape should be (2, 3 + 3) = (2, 6)
+    # so the result is: 
+    # [[1,2,3,7,8,9],
+    #  [4,5,6,10,11,12]]
+
+    # The numpy.ravel() functions returns contiguous flattened array
+    # (1D array with all the input-array elements and with the same type as it).
+
     Z = clf.predict_proba(np.c_[xx.ravel(), yy.ravel()])[:, 1]
+
+    # numpy.reshape: gives a new shape to an array without changing its data.
+    # e.g.: >>> a = np.arange(6).reshape((3, 2))
+    # >>> a  
+    # array([[0, 1],
+    #        [2, 3],
+    #        [4, 5]])
     Z = Z.reshape(xx.shape)
 
     # Create a 3D scatter plot with predictions
