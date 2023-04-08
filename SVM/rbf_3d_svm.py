@@ -146,9 +146,14 @@ def Plot_3D(X, X_test, y_test, clf):
                                               gridcolor='#f0f0f0', 
                                               )))
     # Update marker size
+    # The update_traces() method supports a selector argument to control which traces should be updated. 
+    # Only traces with properties that match the selector will be updated.
     fig.update_traces(marker=dict(size=1))
 
     # Add prediction plane
+    # Surface plot is those plot which has three-dimensions data which is X, Y, and Z. 
+    # Rather than showing individual data points, the surface plot has a functional relationship 
+    # between dependent variable Y and have two independent variables X and Z.
     fig.add_traces(go.Surface(x=xrange, y=yrange, z=Z, name='SVM Prediction',
                               colorscale='RdBu', showscale=False, 
                               contours = {"z": {"show": True, "start": 0.2, "end": 0.8, "size": 0.05}}))
