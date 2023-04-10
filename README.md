@@ -44,4 +44,17 @@ Reference: <br />
 [3D RBF Kernel SVM](https://towardsdatascience.com/svm-classifier-and-rbf-kernel-how-to-make-better-models-in-python-73bb4914af5b)
 <br />
 
-
+#### Related Topic: Parametic and non-parametic models
+Why is an RBF kernel SVM non-parametric whereas a linear SVM is parametric? <br />
+In the RBF kernel SVM, we construct the kernel matrix by computing the pair-wise distances between the training points, which makes it non-parametric compared to linear SVM. <br />
+<br />
+What's the difference between parametic and non-parametic models? <br />
+In a parametric model, we have a finite number of parameters, and in non-parametric models, the number of parameters is (potentially) infinite. <br />
+<br />
+Parametic ML algo examples: <br />
+Linear models such as linear regression, logistic regression, Perceptron, Naive Bayes, Simple Neural Network and linear SVM. <br />
+Non-parametic ML algo examples: <br />
+K-nearest neighbour, decision trees, or RBF kernel SVMs are all considered as non-parametric learning algorithms since the number of parameters grows with the size of the training set. <br />
+<br />
+Reference: <br />
+[LinkedIn Parametic and non-parametic models differences](https://www.linkedin.com/pulse/what-exactly-difference-between-parametric-model-bhattacharjee/)
