@@ -5,14 +5,20 @@ SVMs, support vector machines are a set of **supervised** learning methods used 
 
 ### Linear Kernel
 Before:
+<br />
 ![Screenshots](screenshots/LinearSVM-before.png)
+<br /><br />
 After:
+<br />
 ![Screenshots](screenshots/LinearSVM-after.png)
 
 ### RBF (Gaussian Radial Basis Function) kernel 
 Before:
+<br />
 ![Screenshots](screenshots/RbfSVM-before.png)
+<br /><br />
 After:
+<br />
 ![Screenshots](screenshots/RbfSVM-after.png)
 
 ### RBF kernel 3D Version
@@ -26,5 +32,6 @@ I implemented fitting() function, started by splitting "rating_difference" and "
 I use sklearn svm SVC rbf (radial basis function) kernel to train and fit the model. Using this model, I can predict the training and testing X. <br />
 Then I generate the ratio of the number of correctly classified samples to the total number of samples, and the classification reports of test and training data. <br />
 After fitting() function, I implemented Plot_3D() by visualizing the test data and the svm rbf model's predictions using plotly 3d scatter. <br />
+From the screnshot, we can see that the black dots on top are the cases when white wins. The surface in the middle is the dicision boundary set by the rbf kernel model. The black dots at the botton are the cases when white doesn't win. <br />
 
 ![Screenshots](screenshots/Rbf3DSVM.png)
