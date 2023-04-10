@@ -20,6 +20,10 @@ Before:
 After:
 <br />
 ![Screenshots](screenshots/RbfSVM-after.png)
+<br />
+Reference: <br />
+[Linear and RBF Kernel SVM Tutorial](https://www.freecodecamp.org/news/svm-machine-learning-tutorial-what-is-the-support-vector-machine-algorithm-explained-with-code-examples)
+<br />
 
 ### RBF kernel 3D Version
 The previous two examples are quite simple and straightforward. It's either linear data (numpy arrays), or sklearn datasets. <br />
@@ -35,3 +39,9 @@ After fitting() function, I implemented Plot_3D() by visualizing the test data a
 From the screnshot, we can see that the black dots on top are the cases when white wins. The surface in the middle is the dicision boundary set by the rbf kernel model. The black dots at the botton are the cases when white doesn't win. <br />
 
 ![Screenshots](screenshots/Rbf3DSVM.png)
+<br />
+Reference: <br />
+[3D RBF Kernel SVM](https://towardsdatascience.com/svm-classifier-and-rbf-kernel-how-to-make-better-models-in-python-73bb4914af5b)
+<br />
+
+
