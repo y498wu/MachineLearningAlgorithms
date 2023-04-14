@@ -1,5 +1,6 @@
 import numpy as np
 from typing import Tuple
+import matplotlib.pyplot as plt
 
 def generate_data(center_scale: float, cluster_scale: float, class_counts: np.ndarray,
                   seed: int = 42) -> Tuple[np.ndarray, np.ndarray]:
@@ -20,3 +21,18 @@ def generate_data(center_scale: float, cluster_scale: float, class_counts: np.nd
     return points, classes
 
 points, classes = generate_data(2, 0.75, [40, 40, 40], seed=42)
+
+plt.style.use('bmh')
+
+def plot_data(points: np.ndarray, classes: np.ndarray) -> None:
+    fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
+    scatter = ax.scatter(x=points[:, 0], y=points[:, 1], c=classes, cmap='prism', edgecolor='black')
+    # Generate a legend based on the data and plot it
+    legend = ax.legend(*scatter.legend_elements(), loc="lower left", title="Classes")
+    ax.add_artist(legend)
+    ax.set_title("Generated dataset")
+    ax.set_xticks([])
+    ax.set_yticks([])
+    plt.show()
+
+plot_data(points, classes)
