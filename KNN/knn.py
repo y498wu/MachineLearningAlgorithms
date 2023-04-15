@@ -2,6 +2,10 @@ import numpy as np
 from typing import Tuple
 import matplotlib.pyplot as plt
 
+# In practice, k is usually chosen at random between 3 and 10.
+# A small value of k results in unstable decision boundaries. 
+# A large value of k often leads to the smoothening of decision boundaries but not always to better metrics.
+
 def generate_data(center_scale: float, cluster_scale: float, class_counts: np.ndarray,
                   seed: int = 42) -> Tuple[np.ndarray, np.ndarray]:
     # Fix a seed to make experiment reproducible
