@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 # A small value of k results in unstable decision boundaries. 
 # A large value of k often leads to the smoothening of decision boundaries but not always to better metrics.
 
+# center_scale: scale of cluster centroid
+# cluster_scale: scale of individual cluster
+# class_counts: determines the size of each cluster (40)
 def generate_data(center_scale: float, cluster_scale: float, class_counts: np.ndarray,
                   seed: int = 42) -> Tuple[np.ndarray, np.ndarray]:
     # Fix a seed to make experiment reproducible
