@@ -23,8 +23,12 @@ def generate_data(center_scale: float, cluster_scale: float, class_counts: np.nd
     # and class_count corresponds to the value of the current element. 
     for class_index, class_count in enumerate(class_counts):
         # Generate the center of the cluster and its points centered around it
+        # a random point (as a 2D array) drawn from a normal distribution with standard deviation center_scale.
         current_center = np.random.normal(scale=center_scale, size=(1, 2))
+        print(current_center)
+        # (+ cunrrent_cnter) can help move the cluster to center around centroid point, current_center
         current_points = np.random.normal(scale=cluster_scale, size=(class_count, 2)) + current_center
+        print(current_points)
         # Assign them to the same class and add those points to the general pool
         current_classes = np.ones(class_count, dtype=np.int64) * class_index
         points.append(current_points)
