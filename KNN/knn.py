@@ -19,6 +19,8 @@ def generate_data(center_scale: float, cluster_scale: float, class_counts: np.nd
     # classes: a numpy array of shape (N,) that contains the corresponding class labels for each point
     # the labels are int from 0 to (len(class_counts) - 1)
     points, classes = [], []
+    # class_index corresponds to the index of the current element in class_counts, 
+    # and class_count corresponds to the value of the current element. 
     for class_index, class_count in enumerate(class_counts):
         # Generate the center of the cluster and its points centered around it
         current_center = np.random.normal(scale=center_scale, size=(1, 2))
