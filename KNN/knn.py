@@ -40,6 +40,7 @@ def generate_data(center_scale: float, cluster_scale: float, class_counts: np.nd
 
 points, classes = generate_data(2, 0.75, [40, 40, 40], seed=42)
 
+# bmh: Bayesian Methods for Hackers (pre-defined style)
 plt.style.use('bmh')
 
 def plot_data(points: np.ndarray, classes: np.ndarray) -> None:
