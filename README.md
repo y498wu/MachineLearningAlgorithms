@@ -61,8 +61,8 @@ Reference: <br />
 <br />
 ## KNN
 KNN, K-Nearest Neighbors, is a non-parametric algorithm used for classification and regression tasks.
-<br />
-Generate and plot data, 3 clusters of points (40 points each).
+<br /><br />
+Generate and plot data, 3 clusters of points (40 points each):
 <br />
 ![Screenshots](screenshots/KNN-dataset.png)
 <br />
