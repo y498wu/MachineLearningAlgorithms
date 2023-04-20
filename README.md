@@ -58,9 +58,10 @@ K-nearest neighbour, decision trees, or RBF kernel SVMs are all considered as no
 <br />
 Reference: <br />
 [LinkedIn Parametic and non-parametic models differences](https://www.linkedin.com/pulse/what-exactly-difference-between-parametric-model-bhattacharjee/)
-
-<br /><br />
+<br />
 ## KNN
+KNN, K-Nearest Neighbors, is a non-parametric algorithm used for classification and regression tasks.
+<br />
 Generate and plot data, 3 clusters of points (40 points each).
 <br />
 ![Screenshots](screenshots/KNN-dataset.png)
