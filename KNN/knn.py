@@ -44,6 +44,9 @@ points, classes = generate_data(2, 0.75, [40, 40, 40], seed=42)
 plt.style.use('bmh')
 
 def plot_data(points: np.ndarray, classes: np.ndarray) -> None:
+    # figsize: size; dpi: resolution
+    # fig is the entire figure, while ax is a single subplot within the figure
+    # This allows us to customize the properties of the scatter plot (e.g., the colors, markers, etc.) on a per-subplot basis.
     fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
     scatter = ax.scatter(x=points[:, 0], y=points[:, 1], c=classes, cmap='prism', edgecolor='black')
     # Generate a legend based on the data and plot it
