@@ -1,6 +1,7 @@
 import numpy as np
 from typing import Tuple
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
 # In practice, k is usually chosen at random between 3 and 10.
 # A small value of k results in unstable decision boundaries. 
@@ -58,3 +59,7 @@ def plot_data(points: np.ndarray, classes: np.ndarray) -> None:
     plt.show()
 
 plot_data(points, classes)
+
+points_train, points_test, classes_train, classes_test = train_test_split(
+    points, classes, test_size=0.3
+)
