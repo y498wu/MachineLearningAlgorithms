@@ -2,6 +2,7 @@ import numpy as np
 from typing import Tuple
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+from collections import Counter
 
 # In practice, k is usually chosen at random between 3 and 10.
 # A small value of k results in unstable decision boundaries. 
@@ -60,6 +61,28 @@ def plot_data(points: np.ndarray, classes: np.ndarray) -> None:
 
 plot_data(points, classes)
 
+# split training and testing data
 points_train, points_test, classes_train, classes_test = train_test_split(
     points, classes, test_size=0.3
 )
+
+def classify_knn(
+    points_train: np.ndarray,
+    classes_train: np.ndarray,
+    points_test: np.ndarray,
+    num_neighbors: int
+) -> np.ndarray:
+    classes_test = np.zeros(points_test.shape[0], dtype=np.int64)
+    for index, test_point in enumerate(points_test):
+        # Compute Euclidean norm between the test point and the training dataset
+        distances = np.linalg.norm(points_train - test_point, ord=2, axis=1)
+        # Collect the closest neighbors indices based on the distance calculated earlier
+        neighbors = np.argpartition(distances, num_neighbors)[:num_neighbors]
+        # Get the classes of those neighbors and assign the most popular one to the test point
+        neighbors_classes = classes_train[neighbors]
+        test_point_class = Counter(neighbors_classes).most_common(1)[0][0]
+        classes_test[index] = test_point_class
+    return classes_test
+
+classes_predicted = classify_knn(points_train, classes_train, points_test, 3)
+
