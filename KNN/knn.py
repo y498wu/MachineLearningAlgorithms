@@ -86,3 +86,8 @@ def classify_knn(
 
 classes_predicted = classify_knn(points_train, classes_train, points_test, 3)
 
+def accuracy(classes_true, classes_predicted):
+    return np.mean(classes_true == classes_predicted)
+
+knn_accuracy = accuracy(classes_test, classes_predicted)
+print(knn_accuracy)
