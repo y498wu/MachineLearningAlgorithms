@@ -70,3 +70,6 @@ The KNN prediction result:
 <br />
 ![Screenshots](screenshots/KNN-prediction.png)
 <br />
+Reference: <br />
+[K-Nearest Neighbors Algorithm for ML](https://serokell.io/blog/knn-algorithm-in-ml)
+<br />
