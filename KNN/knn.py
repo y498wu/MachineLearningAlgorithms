@@ -75,8 +75,11 @@ def classify_knn(
     classes_test = np.zeros(points_test.shape[0], dtype=np.int64)
     for index, test_point in enumerate(points_test):
         # Compute Euclidean norm between the test point and the training dataset
+        # can also use: from scipy.spatial import distance | dst = distance.euclidean(a, b)
         distances = np.linalg.norm(points_train - test_point, ord=2, axis=1)
         # Collect the closest neighbors indices based on the distance calculated earlier
+        # finds the indices of the num_neighbors smallest elements in the distances array, 
+        # and then slices the resulting array to keep only the first num_neighbors indices.
         neighbors = np.argpartition(distances, num_neighbors)[:num_neighbors]
         # Get the classes of those neighbors and assign the most popular one to the test point
         neighbors_classes = classes_train[neighbors]
