@@ -123,6 +123,8 @@ def knn_prediction_visualisation(
 
     # Plot the results
     fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
+    # pcolormesh: plots the mesh grid as a colored background
+    # with each color corresponding to a different predicted class.
     ax.pcolormesh(mesh_test_x, mesh_test_y, mesh_classes_predicted,
                   shading='auto', cmap='prism', alpha=0.4)
     scatter = ax.scatter(x=points[:, 0], y=points[:, 1], c=classes,
