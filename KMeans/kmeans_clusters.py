@@ -1,11 +1,16 @@
 import matplotlib.pyplot as plt
+import seaborn as sns; sns.set()  # for plot styling
 import numpy as np
 from sklearn.datasets._samples_generator import make_blobs
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin
 
+# cluster_std: standard deviation
+# random_state: random seed
 X, y_true = make_blobs(n_samples=300, centers=4,
                        cluster_std=0.60, random_state=0)
+# X[:, 0], X[:, 1]: extract the first and second columns
+# s: the size of the markers in the scatter plot
 plt.scatter(X[:, 0], X[:, 1], s=50)
 
 '''
