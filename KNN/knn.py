@@ -86,6 +86,8 @@ def classify_knn(
         # Get the classes of those neighbors and assign the most popular one to the test point
         neighbors_classes = classes_train[neighbors]
         # A Counter is a dict subclass for counting hashable objects.
+        # The most_common(1) method returns a list of the most common class(es) and their count
+        # then extract the first element of the first tuple in this list using [0][0] to get the most common class.
         test_point_class = Counter(neighbors_classes).most_common(1)[0][0]
         classes_test[index] = test_point_class
     return classes_test
@@ -93,6 +95,8 @@ def classify_knn(
 classes_predicted = classify_knn(points_train, classes_train, points_test, 3)
 
 def accuracy(classes_true, classes_predicted):
+    # checks if each element in classes_true is equal to the corresponding element in classes_predicted.
+    # calculates the mean of this boolean array, which gives the fraction of correctly predicted classes.
     return np.mean(classes_true == classes_predicted)
 
 knn_accuracy = accuracy(classes_test, classes_predicted)
