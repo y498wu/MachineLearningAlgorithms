@@ -8,8 +8,11 @@ plt.scatter(x, y)
 plt.show()
 
 data = list(zip(x, y))
+print(data)
 kmeans = KMeans(n_clusters=2)
 kmeans.fit(data)
 
+# By setting c to kmeans.labels_, 
+# the scatter plot will color each data point based on its cluster label
 plt.scatter(x, y, c=kmeans.labels_)
 plt.show()
