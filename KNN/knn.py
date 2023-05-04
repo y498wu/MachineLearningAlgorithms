@@ -2,6 +2,8 @@ import numpy as np
 from typing import Tuple
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+# This module implements specialized container datatypes 
+# providing alternatives to Python’s general purpose built-in containers, dict, list, set, and tuple.
 from collections import Counter
 
 # In practice, k is usually chosen at random between 3 and 10.
@@ -83,6 +85,7 @@ def classify_knn(
         neighbors = np.argpartition(distances, num_neighbors)[:num_neighbors]
         # Get the classes of those neighbors and assign the most popular one to the test point
         neighbors_classes = classes_train[neighbors]
+        # A Counter is a dict subclass for counting hashable objects.
         test_point_class = Counter(neighbors_classes).most_common(1)[0][0]
         classes_test[index] = test_point_class
     return classes_test
