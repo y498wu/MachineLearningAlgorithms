@@ -107,10 +107,10 @@ def knn_prediction_visualisation(
     classes: np.ndarray,
     num_neighbors: int
 ) -> None:
+    
     x_min, x_max = points[:, 0].min() - 1, points[:, 0].max() + 1
     y_min, y_max = points[:, 1].min() - 1, points[:, 1].max() + 1
     step = 0.05
-
 
     # Prepare a mesh grid of the plane to cluster
     mesh_test_x, mesh_test_y = np.meshgrid(
@@ -120,7 +120,6 @@ def knn_prediction_visualisation(
     # Predict clusters and prepare the results for the plotting
     classes_predicted = classify_knn(points, classes, points_test, num_neighbors)
     mesh_classes_predicted = classes_predicted.reshape(mesh_test_x.shape)
-
 
     # Plot the results
     fig, ax = plt.subplots(figsize=(5, 5), dpi=150)
@@ -132,7 +131,6 @@ def knn_prediction_visualisation(
     ax.set_title("KNN clustering result")
     ax.set_xticks([])
     ax.set_yticks([])
-
 
     plt.show()
 
