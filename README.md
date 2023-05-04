@@ -75,6 +75,9 @@ Reference: <br />
 [K-Nearest Neighbors Algorithm for ML](https://serokell.io/blog/knn-algorithm-in-ml)
 <br />
 
-## KMenas Clustering
+## KMeans Clustering
+Before: <br />
 ![Screenshots](screenshots/KMeans-sklearn-before.png)
+<br />
+After: <br />
 ![Screenshots](screenshots/KMeans-sklearn-after.png)
