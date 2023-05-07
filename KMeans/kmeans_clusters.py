@@ -26,7 +26,11 @@ centers = kmeans.cluster_centers_
 plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)
 plt.show()
 
-# expectation–maximization version
+# Expectation–Maximization version
+# 1. Guess some cluster centers
+# 2. Repeat until converged
+#   1. E-Step: assign points to the nearest cluster center
+#   2. M-Step: set the cluster centers to the mean
 def find_clusters(X, n_clusters, rseed=2):
     # 1. Randomly choose clusters
     rng = np.random.RandomState(rseed)
