@@ -19,6 +19,7 @@ kmeans = KMeans(n_clusters=4)
 kmeans.fit(X)
 y_kmeans = kmeans.predict(X)
 
+# use the Viridis color map for the plot
 plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
 
 centers = kmeans.cluster_centers_
