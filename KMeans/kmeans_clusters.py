@@ -7,6 +7,8 @@ from sklearn.metrics import pairwise_distances_argmin
 
 # cluster_std: standard deviation
 # random_state: random seed
+# X contains the coordinates of the generated points
+# y_true contains the true cluster labels of the points
 X, y_true = make_blobs(n_samples=300, centers=4,
                        cluster_std=0.60, random_state=0)
 # X[:, 0], X[:, 1]: extract the first and second columns
@@ -33,10 +35,14 @@ plt.show()
 #   2. M-Step: set the cluster centers to the mean
 def find_clusters(X, n_clusters, rseed=2):
     # 1. Randomly choose clusters
+
     # RandomState: used to create a random number generator with a set seed
     # It is useful because using seed() impacts the global numpy random generation, 
     # while RandomState will set the seed for the rng generator only
     rng = np.random.RandomState(rseed)
+    # rng.permutation(X.shape[0]): creates a random permutation of the integers from 0 to X.shape[0]-1
+    # [:n_clusters]: selects the first n_clusters integers from the permutation
+    # i: selected indices 
     i = rng.permutation(X.shape[0])[:n_clusters]
     centers = X[i]
     
