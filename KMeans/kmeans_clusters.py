@@ -33,6 +33,9 @@ plt.show()
 #   2. M-Step: set the cluster centers to the mean
 def find_clusters(X, n_clusters, rseed=2):
     # 1. Randomly choose clusters
+    # RandomState: used to create a random number generator with a set seed
+    # It is useful because using seed() impacts the global numpy random generation, 
+    # while RandomState will set the seed for the rng generator only
     rng = np.random.RandomState(rseed)
     i = rng.permutation(X.shape[0])[:n_clusters]
     centers = X[i]
