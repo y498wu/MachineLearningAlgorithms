@@ -48,6 +48,7 @@ def find_clusters(X, n_clusters, rseed=2):
     
     while True:
         # 2a. Assign labels based on closest center
+        # pairwise_distances_argmin：Compute minimum distances between one point and a set of points.
         labels = pairwise_distances_argmin(X, centers)
         
         # 2b. Find new centers from means of points
