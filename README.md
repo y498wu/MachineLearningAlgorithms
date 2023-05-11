@@ -76,8 +76,11 @@ Reference: <br />
 <br />
 
 ## KMeans Clustering
+Simple version: <br />
 Before: <br />
 ![Screenshots](screenshots/KMeans-sklearn-before.png)
 <br />
 After: <br />
 ![Screenshots](screenshots/KMeans-sklearn-after.png)
+<br /><br />
+PyTorch version: <br />
