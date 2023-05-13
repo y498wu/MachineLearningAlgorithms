@@ -78,9 +78,9 @@ Reference: <br />
 ## KMeans Clustering
 Simple version: <br />
 Before: <br />
-![Screenshots](screenshots/KMeans-sklearn-before.png)
+![Screenshots](screenshots/KMeans-simple-before.png)
 <br />
 After: <br />
-![Screenshots](screenshots/KMeans-sklearn-after.png)
+![Screenshots](screenshots/KMeans-simple-after.png)
 <br /><br />
 PyTorch version: <br />
