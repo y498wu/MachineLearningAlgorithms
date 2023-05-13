@@ -93,4 +93,5 @@ After (clusters and centroids): <br />
 <br />
 Reference: <br />
 [In Depth: k-Means Clustering](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
+<br />
 PyTorch version: <br />
