@@ -91,4 +91,6 @@ After (clusters and centroids): <br />
 ![Screenshots](screenshots/KMeans-sklearn-cluster.png)
 ![Screenshots](screenshots/KMeans-sklearn-centroid.png)
 <br />
+Reference: <br />
+[In Depth: k-Means Clustering](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
 PyTorch version: <br />
