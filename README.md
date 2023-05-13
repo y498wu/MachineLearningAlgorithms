@@ -83,4 +83,12 @@ Before: <br />
 After: <br />
 ![Screenshots](screenshots/KMeans-simple-after.png)
 <br /><br />
+Scikit Learn version: <br />
+Before (data): <br />
+![Screenshots](screenshots/KMeans-sklearn-data.png)
+<br />
+After (clusters and centroids): <br />
+![Screenshots](screenshots/KMeans-sklearn-cluster.png)
+![Screenshots](screenshots/KMeans-sklearn-centroid.png)
+<br />
 PyTorch version: <br />
