@@ -78,9 +78,20 @@ Reference: <br />
 ## KMeans Clustering
 Simple version: <br />
 Before: <br />
-![Screenshots](screenshots/KMeans-sklearn-before.png)
+![Screenshots](screenshots/KMeans-simple-before.png)
 <br />
 After: <br />
-![Screenshots](screenshots/KMeans-sklearn-after.png)
+![Screenshots](screenshots/KMeans-simple-after.png)
 <br /><br />
+Scikit Learn version: <br />
+Before (data): <br />
+![Screenshots](screenshots/KMeans-sklearn-data.png)
+<br />
+After (clusters and centroids): <br />
+![Screenshots](screenshots/KMeans-sklearn-cluster.png)
+![Screenshots](screenshots/KMeans-sklearn-centroid.png)
+<br />
+Reference: <br />
+[In Depth: k-Means Clustering](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
+<br />
 PyTorch version: <br />
