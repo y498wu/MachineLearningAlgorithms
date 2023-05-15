@@ -9,5 +9,5 @@ x = torch.from_numpy(x)
 
 # kmeans
 cluster_ids_x, cluster_centers = kmeans(
-    X=x, num_clusters=num_clusters, distance='euclidean', device=torch.device('cuda:0')
+    X=x, num_clusters=num_clusters, distance='euclidean', device=torch.device('cpu')
 )
