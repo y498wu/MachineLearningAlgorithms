@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+# need to install python module tqdm
 from kmeans_pytorch import kmeans
 
 # data
