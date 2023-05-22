@@ -61,7 +61,7 @@ Reference: <br />
 <br />
 
 ## KNN
-KNN, K-Nearest Neighbors, is a non-parametric algorithm used for classification and regression tasks.
+KNN, K-Nearest Neighbors, is a **supervised**, non-parametric algorithm used for classification and regression tasks.
 <br /><br />
 Generate and plot data, 3 clusters of points (40 points each):
 <br />
@@ -76,6 +76,7 @@ Reference: <br />
 <br />
 
 ## KMeans Clustering
+K-Means clustering is an **unsupervised** learning algorithm. The K-means clustering algorithm computes centroids and repeats until the optimal centroid is found.
 Simple version: <br />
 Before: <br />
 ![Screenshots](screenshots/KMeans-simple-before.png)
@@ -94,4 +95,4 @@ After (clusters and centroids): <br />
 Reference: <br />
 [In Depth: k-Means Clustering](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
 <br />
-PyTorch version: <br />
+
