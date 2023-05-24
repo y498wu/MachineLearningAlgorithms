@@ -11,3 +11,6 @@ train_dataset = datasets.MNIST(root='./data',
 test_dataset = datasets.MNIST(root='./data', 
                               train=False, 
                               transform=transforms.ToTensor())
+
+print("number of training samples: " + str(len(train_dataset)) + "\n" +
+      "number of testing samples: " + str(len(test_dataset)))
