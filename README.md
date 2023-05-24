@@ -96,3 +96,4 @@ Reference: <br />
 [In Depth: k-Means Clustering](https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html)
 <br />
 
+## Logistic Regression
