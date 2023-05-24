@@ -1,6 +1,10 @@
 import torch
 import torchvision.transforms as transforms
 from torchvision import datasets
+
+# torchvision.transforms: common image transformations.
+# They accept tensor images/batch of tensor images.
+# A Tensor Image is a tensor with (C, H, W) shape, where C is a number of channels, H and W are image height and width.
  
 # loading training data
 train_dataset = datasets.MNIST(root='./data', 
