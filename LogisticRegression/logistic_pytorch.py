@@ -18,5 +18,18 @@ test_dataset = datasets.MNIST(root='./data',
                               train=False, 
                               transform=transforms.ToTensor())
 
+# verify number of training and testing samples in the dataset
 print("number of training samples: " + str(len(train_dataset)) + "\n" +
       "number of testing samples: " + str(len(test_dataset)))
+
+# inspect the data type and size of the first element in the training data
+print("datatype of the 1st training sample: ", train_dataset[0][0].type())
+print("size of the 1st training sample: ", train_dataset[0][0].size())
+
+# print result: 
+# datatype of the 1st training sample:  torch.FloatTensor
+# size of the 1st training sample:  torch.Size([1, 28, 28])
+
+# The first sample in the dataset is a FloatTensor and it is a 
+# 28x28-pixel image in grayscale, hence the size [1, 28, 28].
+
