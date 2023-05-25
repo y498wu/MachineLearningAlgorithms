@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 # Torchvision provides many built-in datasets in the torchvision.datasets module, 
 # as well as utility classes for building your own datasets.
 from torchvision import datasets
+import matplotlib.pyplot as plt
  
 # loading training data
 train_dataset = datasets.MNIST(root='./data', 
@@ -41,3 +42,11 @@ print("size of the 1st training sample: ", train_dataset[0][0].size())
 # the second index [1] represents that these are labels
 print("label of the first taining sample: ", train_dataset[0][1])
 print("label of the second taining sample: ", train_dataset[1][1])
+
+# show images of the first two elements in training dataset
+img_5 = train_dataset[0][0].numpy().reshape(28, 28)
+plt.imshow(img_5, cmap='gray')
+plt.show()
+img_0 = train_dataset[1][0].numpy().reshape(28, 28)
+plt.imshow(img_0, cmap='gray')
+plt.show()
