@@ -45,8 +45,9 @@ print("label of the second taining sample: ", train_dataset[1][1])
 
 # show images of the first two elements in training dataset
 img_5 = train_dataset[0][0].numpy().reshape(28, 28)
-plt.imshow(img_5, cmap='gray')
+# Yeshu tip: cmap='PuRd' is also great! Feels like a purple-red gem -w-
+plt.imshow(img_5, cmap='GnBu')
 plt.show()
 img_0 = train_dataset[1][0].numpy().reshape(28, 28)
-plt.imshow(img_0, cmap='gray')
+plt.imshow(img_0, cmap='GnBu')
 plt.show()
