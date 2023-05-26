@@ -7,6 +7,7 @@ import torchvision.transforms as transforms
 # as well as utility classes for building your own datasets.
 from torchvision import datasets
 import matplotlib.pyplot as plt
+from torch.utils.data import DataLoader
  
 # loading training data
 train_dataset = datasets.MNIST(root='./data', 
@@ -51,3 +52,9 @@ plt.show()
 img_0 = train_dataset[1][0].numpy().reshape(28, 28)
 plt.imshow(img_0, cmap='GnBu')
 plt.show()
+
+# load train and test data samples into dataloader
+# DataLoader allows you to read data in batches, not samples.
+batach_size = 32
+train_loader = DataLoader(dataset=train_dataset, batch_size=batach_size, shuffle=True) 
+test_loader = DataLoader(dataset=test_dataset, batch_size=batach_size, shuffle=False)
