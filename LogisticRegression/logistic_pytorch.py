@@ -58,3 +58,14 @@ plt.show()
 batach_size = 32
 train_loader = DataLoader(dataset=train_dataset, batch_size=batach_size, shuffle=True) 
 test_loader = DataLoader(dataset=test_dataset, batch_size=batach_size, shuffle=False)
+
+# build custom module for logistic regression
+class LogisticRegression(torch.nn.Module):    
+    # build the constructor
+    def __init__(self, n_inputs, n_outputs):
+        super(LogisticRegression, self).__init__()
+        self.linear = torch.nn.Linear(n_inputs, n_outputs)
+    # make predictions
+    def forward(self, x):
+        y_pred = torch.sigmoid(self.linear(x))
+        return y_pred
