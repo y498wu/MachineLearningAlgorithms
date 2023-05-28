@@ -1,7 +1,8 @@
 import torch
 # torchvision.transforms: common image transformations.
 # They accept tensor images/batch of tensor images.
-# A Tensor Image is a tensor with (C, H, W) shape, where C is a number of channels, H and W are image height and width.
+# A Tensor Image is a tensor with (C, H, W) shape, 
+# where C is a number of channels, H and W are image height and width.
 import torchvision.transforms as transforms
 # Torchvision provides many built-in datasets in the torchvision.datasets module, 
 # as well as utility classes for building your own datasets.
@@ -60,6 +61,8 @@ train_loader = DataLoader(dataset=train_dataset, batch_size=batach_size, shuffle
 test_loader = DataLoader(dataset=test_dataset, batch_size=batach_size, shuffle=False)
 
 # build custom module for logistic regression
+# torch.nn.Module: Base class for all neural network modules. 
+# Your models should also subclass this class.
 class LogisticRegression(torch.nn.Module):    
     # build the constructor
     def __init__(self, n_inputs, n_outputs):
