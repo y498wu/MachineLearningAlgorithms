@@ -66,9 +66,15 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batach_size, shuffle=F
 class LogisticRegression(torch.nn.Module):    
     # build the constructor
     def __init__(self, n_inputs, n_outputs):
-        super(LogisticRegression, self).__init__()
+        super(LogisticRegression, self).__init__()  
+        # Applies a linear transformation to the incoming data: y = x * A^T + b
         self.linear = torch.nn.Linear(n_inputs, n_outputs)
     # make predictions
     def forward(self, x):
         y_pred = torch.sigmoid(self.linear(x))
         return y_pred
+    
+# instantiate the model
+n_inputs = 28*28 # makes a 1D vector of 784
+n_outputs = 10
+log_regr = LogisticRegression(n_inputs, n_outputs)
