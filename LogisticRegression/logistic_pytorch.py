@@ -78,3 +78,6 @@ class LogisticRegression(torch.nn.Module):
 n_inputs = 28*28 # makes a 1D vector of 784
 n_outputs = 10
 log_regr = LogisticRegression(n_inputs, n_outputs)
+
+# defining the optimizer
+optimizer = torch.optim.SGD(log_regr.parameters(), lr=0.001)
