@@ -81,3 +81,5 @@ log_regr = LogisticRegression(n_inputs, n_outputs)
 
 # defining the optimizer
 optimizer = torch.optim.SGD(log_regr.parameters(), lr=0.001)
+# defining Cross-Entropy loss
+criterion = torch.nn.CrossEntropyLoss()
