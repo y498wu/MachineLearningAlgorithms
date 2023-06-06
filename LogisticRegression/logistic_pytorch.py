@@ -87,3 +87,20 @@ criterion = torch.nn.CrossEntropyLoss()
 epochs = 50
 Loss = []
 acc = []
+for epoch in range(epochs):
+    for i, (images, labels) in enumerate(train_loader):
+        optimizer.zero_grad()
+        outputs = log_regr(images.view(-1, 28*28))
+        loss = criterion(outputs, labels)
+        # Loss.append(loss.item())
+        loss.backward()
+        optimizer.step()
+    Loss.append(loss.item())
+    correct = 0
+    for images, labels in test_loader:
+        outputs = log_regr(images.view(-1, 28*28))
+        _, predicted = torch.max(outputs.data, 1)
+        correct += (predicted == labels).sum()
+    accuracy = 100 * (correct.item()) / len(test_dataset)
+    acc.append(accuracy)
+    print('Epoch: {}. Loss: {}. Accuracy: {}'.format(epoch, loss.item(), accuracy))
