@@ -104,3 +104,9 @@ for epoch in range(epochs):
     accuracy = 100 * (correct.item()) / len(test_dataset)
     acc.append(accuracy)
     print('Epoch: {}. Loss: {}. Accuracy: {}'.format(epoch, loss.item(), accuracy))
+
+plt.plot(Loss)
+plt.xlabel("no. of epochs")
+plt.ylabel("total loss")
+plt.title("Loss")
+plt.show()
