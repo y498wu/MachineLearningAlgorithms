@@ -71,6 +71,7 @@ class LogisticRegression(torch.nn.Module):
         self.linear = torch.nn.Linear(n_inputs, n_outputs)
     # make predictions
     def forward(self, x):
+        # sigmoid: based on math fucntion 1 / (1 + np.exp(-x))
         y_pred = torch.sigmoid(self.linear(x))
         return y_pred
     
